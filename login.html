@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>HTML 5 Boilerplate</title>
-        <link rel="stylesheet" href="style.css">
-        </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='/css/reg_login.css') }}" >
+    <title>Document</title>
+</head>
+<body>
+    <div id="log_form">
+        <form action="/login" method="post" id="log-form">
+            <div id="title">
+                <img src="/static/img/HP_Black_RGB_150_SM.png" alt="HP-logo">
+                <h2>Login</h2>
+            </div>
+            {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                <div id="flashbox"> 
+                    <p id="flash_message">{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                </div>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
 
-
-        
-        <body>    
-        <h2>Login Form</h2>
-
-        <form action="/login" method="post">
-            <label for="email" class="labels">Email:</label>
-                <input type="email" id="email" name="email" class="inputs" required><br><br>
-
-                <label for="password" class="labels">Password:</label>
-                <input type="password" id="password" name="password" class="inputs" required><br><br>
-
-                <input type="submit" value="Login" class="buttons">
+            <div id="form_input">
+                <div>
+                    <label for="fname">Email:</label>
+                    <input type="text" name="email" required>
+                </div>
+                <div>
+                    <label for="lname">Password:</label>
+                    <input type="password" name="password" required>
+                </div>
+            </div>
+                <div id="button">
+                    <label></label>
+                    <input type="submit" value="Login" id="input_button">
+                </div>
+            
         </form>
-        </body>
-    
+    </div>
+</body>
 </html>

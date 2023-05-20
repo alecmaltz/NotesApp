@@ -1,33 +1,56 @@
 <!DOCTYPE html>
-<html>
-        <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css"/>
-        
-        
-            <title>Registration Page</title>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='/css/reg_login.css') }}" >
+    <title>Document</title>
+</head>
 <body>
-  <h2>Registration Form</h2>
-  <form action="/register" method="post">
-    <label for="first_name" class="labels">First Name:</label>
-    <input class="inputs" type="text" id="first_name" name="first_name" required><br><br>
+    <div id="reg_form">
+        <form action="/register" method="post" id="reg-form">
+            <div id="title">
+                <img src="/static/img/HP_Black_RGB_150_SM.png" alt="HP-logo">
+                <h2>Create Account</h2>
+            </div>
 
-    <label for="last_name" class="labels">Last Name:</label>
-    <input type="text" class="inputs" id="last_name" name="last_name" required><br><br>
-
-    <label for="email" class="labels">Email:</label>
-    <input type="email" id="email" class="inputs" name="email" required><br><br>
-
-    <label for="password" class="labels">Password:</label>
-    <input type="password" id="password" name="password" required><br><br>
-
-    <label for="password_confirm" class="labels">Confirm Password:</label>
-    <input type="password" id="password_confirm" name="password_confirm" required><br><br>
-
-
-    <input class="buttons" type="submit" value="Register">
-  </form>
+            {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                <div id="flashbox"> 
+                <p id="flash_message">{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                </div>   
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <div id="form_input">
+                <div>
+                    <label for="first_name">First name:</label>
+                    <input type="text" id="first_name" name="first_name">
+                </div>
+                <div>
+                    <label for="last_name">Last name:</label>
+                    <input type="text" name="last_name">
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="text" name="email">
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" required>
+                </div>
+                <div>
+                    <label for="confirm_password">Confirm Password:</label>
+                    <input type="password" name="confirm_password" required>
+                </div>
+            </div>
+                <div id="button">
+                    <label></label>
+                    <input type="submit" value="&nbsp Join &nbsp" id="input_button">
+                </div>
+        </form>
+    </div>
 </body>
 </html>

@@ -1,0 +1,129 @@
+/* register box */
+body{
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(218, 217, 217);
+}
+
+#reg_form {
+    display: flex;
+    width: 48%;
+    max-width: 470px;
+    min-width: 420px;
+    height: 400px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: white;
+}
+
+#cust_form {
+    display: flex;
+    width: 48%;
+    max-width: 500px;
+    min-width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: white;
+}
+
+#log_form {
+    display: flex;
+    width: 48%;
+    max-width: 450px;
+    min-width: 420px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: white;
+}
+
+#flashbox {
+    display: flex;
+    justify-content: center;
+    color: rgb(230, 14, 14)
+}
+
+#flash_message {
+    margin: 0;
+}
+
+#reg_form_input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+img {
+    margin: 15px 0px 15px 15px;
+    width: 40px;
+    height: 40px;
+}
+
+h2 {
+    text-align: center;
+    margin: 15px 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+}
+
+#form_input {
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
+    justify-content: right;
+    align-items: center;
+}
+
+#form_input div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    margin: 5px;
+}
+
+input , textarea {
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(56, 55, 55);
+    height: 20px;
+    width: 200px;
+}
+
+
+#address_input {
+    height: 40px;
+    
+}
+#button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0px 15px 15px;
+}
+
+#input_button {
+    width: 160px;
+    height: 36px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: #2a83bf;
+    color: white;
+}
+
+#input_button:hover {
+    background-color: #3aa7da;
+    color:rgba(32, 32, 32, 0.796)
+}
