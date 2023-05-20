@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>NotesApp</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="containers">
+        <div class="headerbars">
+            <h1>NotesApp</h1>
+            <a href="NoteList.html">Home</a>
+        </div>
+
+        <div>
+            <form action="/save-note" method="post">
+                <label for="title" class="labels">Title:</label>
+                <input type="text" id="title" name="title" class="inputs" required><br><br>
+            
+                <label for="date" class="labels">Date:</label>
+                <input type="date" id="date" name="date" class="inputs" required><br><br>
+            
+                <label for="note" class="labels">Note:</label>
+                <textarea id="note" name="note" class="inputs" rows="4" required></textarea><br><br>
+            
+                <input type="submit" value="Save" class="buttons">
+
+        </div>
+
+        
+
+
+    </body>
+    
+</html>
