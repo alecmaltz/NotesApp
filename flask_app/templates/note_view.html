@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}"> <!-- change the filename of css if needed -->
+        <title>View Note</title>
+    </head>
+    <body>
+        <ul>
+            <li>
+                <a class="nav-link" href="/dashboard">Notes</a>
+            </li>
+            <li>
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+        </ul>
+        <div>
+            <h1>Title:{{one_note.title}}</h1>
+            <h5>By: {{one_note.name}}</h5>
+            <h5>Date:{{one_note.date}}</h5>
+            <h5>Note:{{one_note.des}}</h5><br>
+            <h6>Posted By: {{one_note.creator.first_name}} {{one_note.creator.last_name}}</h6> <!-- the user can see the person who created the note -->
+        </div>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}"> <!-- change the filename of css if needed -->
+        <title>Add a New note!</title>
+    </head>
+
+    <body>
+        <h4>Add a New Note!:</h4>
+        <ul>
+            <li>
+                <a class="nav-link" href="/dashboard">Notes</a> <!-- forgot if you guys wanted a button or a link to redirect the user, you can change if wanted -->
+            </li>
+            <li>
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+        </ul>
+        {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <p class="error">{{message}}</p>     <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="/process/note" method="POST" > <!-- you can change /process/note if you like -->
+            <div>
+              <label for="titleinput" class="form-label">Title:</label>
+              <input type="text" class="form-control" id="titleinput" name="title">
+            </div>
+
+            <div class="mb-3">
+                <label for="nameinput" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="nameinput" name="name">
+              </div>
+
+            <div>
+                <label for="date">Date:</label>
+                <input type="date" name="date" id="date">
+            </div>
+            
+            <div class="mb-3">
+                <label for="textarea">Write your note:</label>
+                <textarea class="form-control" id="textarea" name="desc" rows="5"></textarea>
+                <!-- desc is short for description, where the user can write their notes -->
+            </div>
+            
+            <button type="submit">Add</button>
+        </form>
+    </body>
+</html>

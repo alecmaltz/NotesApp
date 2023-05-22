@@ -1,36 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>NotesApp</title>
-        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}"/> <!-- change the filename of css if needed -->
+        <title>Edit Note</title>
     </head>
-    <body class="containers">
-        <div class="headerbars">
-            <h1>NotesApp</h1>
-            <a href="NoteList.html">Home</a>
-        </div>
 
-        <div>
-            <form action="/save-note" method="post">
-                <label for="title" class="labels">Title:</label>
-                <input type="text" id="title" name="title" class="inputs" required><br><br>
-            
-                <label for="date" class="labels">Date:</label>
-                <input type="date" id="date" name="date" class="inputs" required><br><br>
-            
-                <label for="note" class="labels">Note:</label>
-                <textarea id="note" name="note" class="inputs" rows="4" required></textarea><br><br>
-            
-                <input type="submit" value="Save" class="buttons">
+    <body>
+        <h4>Edit note</h4>
+        <ul>
+            <li>
+                <a class="nav-link" href="/dashboard">Notes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+        </ul>
+        {% with messages = get_flashed_messages() %}
+             <!-- declare a variable called messages -->
+            {% if messages %}
+                <!-- check if there are any messages -->
+                {% for message in messages %}
+                    <!-- loop through the messages -->
+                    <p class="error">{{message}}</p>
+                    <!-- display each message in a paragraph tag -->
+                {% endfor %} 
+            {% endif %} 
+        {% endwith %}
+        <form action="/update/{{one_note.id}}" method="POST">
+            <div>
+                <label for="titleinput" class="form-label">Title:</label>
+                <input type="text" class="form-control" id="titleinput" name="title" value="{{one_note.title}}" />
+            </div>
 
-        </div>
+            <div>
+                <label for="nameinput" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="nameinput" name="name" value="{{one_note.name}}"/>
+            </div>
 
-        
+            <div>
+                <label for="date">Date:</label>
+                <input type="date" name="date" id="date" value="{{one_note.date}}"/>
+            </div>
 
+            <div>
+                <label for="textarea">Write your note:</label>
+                <textarea class="form-control" id="textarea" name="desc" rows="5">{{one_note.desc}}</textarea>
+            </div>
 
+            <button type="submit">Update</button>
+        </form>
     </body>
-    
 </html>
