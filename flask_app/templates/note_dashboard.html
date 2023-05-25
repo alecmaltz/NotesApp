@@ -7,23 +7,22 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"> <!-- change the filename of css if needed -->
         <title>Dashboard</title>
     </head>
-    <body>
+    <body class="body-img">
 
-        <h1>Hey {{user.first_name}}! </h1>
-        <h4>All Notes:</h4>
-        <ul>
-            <li>
-                <a class="nav-link" href="/create_note">Create A Note</a> <!-- forgot if you guys wanted a button or a link to redirect the user, you can change if wanted -->
-            </li>
-            <li>
-                <a class="nav-link" href="/logout">Logout</a>
-            </li>
-        </ul>
+        <div class="headerbars">
+            <h1>Hey {{user.first_name}}! </h1>
+            <div>
+                <button><a class="nav-link" href="/create_note">Create A Note</a> </button>
+            </div>
+            <div>
+                <button><a class="nav-link" href="/logout">Logout</a></button>
+            </div>
+        </div>
         
         <!-- List of all notes -->
         <table>
         <thead>
-            <tr>
+            <tr class="row">
                 <th>Title</th>
                 <th>By</th>
                 <th>Date</th>
@@ -32,15 +31,18 @@
         </thead>
         <tbody>
             {% for note in all_notes %}
-                <tr>
-                    <td>{{note.title}}</td>
-                    <td>{{note.name}}</td>
-                    <td>{{note.date}}</td>
+                <tr class="row">
+                    
                     <td>
-                        <a href="/note/{{note.id}}">note</a>
+                        <button><a href="/note_details/{{note.id}}">{{note.title}}</a></button>
+                    </td>
+                    <td>{{note.creator.first_name}}</td>
+                    <td>{{note.created_at}}</td>
+                    <td>
                         {% if session['user_id'] == note.creator.id  %} <!-- creator is the user who is in session who can delete or edit their note-->
-                            <a href="/notes/edit/{{note.id}}">|edit</a> <!-- where the user can edit their note -->
-                            <a href="/notes/delete/{{note.id}}">|delete</a> <!-- where the user can delete their note -->
+                            <button><a href="/edit_note/{{note.id}}">EDIT</a></button> <!-- where the user can edit their note -->
+                            <button class="button-red"><a href="/delete/{{note.id}}">DELETE</a></button> <!-- where the user can delete their note -->
+                    </td>
                         {% endif %}
                     </td>
                 </tr>

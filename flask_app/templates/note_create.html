@@ -8,16 +8,18 @@
         <title>Add a New note!</title>
     </head>
 
-    <body>
-        <h4>Add a New Note!:</h4>
-        <ul>
-            <li>
-                <a class="nav-link" href="/dashboard">Notes</a> <!-- forgot if you guys wanted a button or a link to redirect the user, you can change if wanted -->
-            </li>
-            <li>
-                <a class="nav-link" href="/logout">Logout</a>
-            </li>
-        </ul>
+    <body class="body-img">
+        <div>
+        <div class=headerbars>
+            <h1>Add a New Note!</h1>
+            <div>
+                <button><a href="/dashboard">All Notes</a> </button><!-- forgot if you guys wanted a button or a link to redirect the user, you can change if wanted -->
+            </div>
+            <div>
+                <button><a class="nav-link" href="/logout">Logout</a></button>
+            </div>
+        </div>
+    </div>
         {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
             {% if messages %}                            <!-- check if there are any messages -->
                 {% for message in messages %}            <!-- loop through the messages -->

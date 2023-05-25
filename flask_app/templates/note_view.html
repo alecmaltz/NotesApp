@@ -7,15 +7,15 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}"> <!-- change the filename of css if needed -->
         <title>View Note</title>
     </head>
-    <body>
-        <ul>
-            <li>
+    <body class="body-img">
+        <div class="headerbars">
+            <div>
                 <a class="nav-link" href="/dashboard">Notes</a>
-            </li>
-            <li>
+            </div>
+            <div>
                 <a class="nav-link" href="/logout">Logout</a>
-            </li>
-        </ul>
+            </div>
+        </div>
         <div>
             <h1>Title:{{one_note.title}}</h1>
             <h5>By: {{one_note.name}}</h5>

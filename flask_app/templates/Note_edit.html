@@ -8,16 +8,17 @@
         <title>Edit Note</title>
     </head>
 
-    <body>
-        <h4>Edit note</h4>
-        <ul>
-            <li>
-                <a class="nav-link" href="/dashboard">Notes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/logout">Logout</a>
-            </li>
-        </ul>
+    <body class="body-img">
+      <div>
+        <div class=headerbars>
+            <h1>Edit Note!</h1>
+            <div>
+                <button><a href="/dashboard">All Notes</a> </button><!-- forgot if you guys wanted a button or a link to redirect the user, you can change if wanted -->
+            </div>
+            <div>
+                <button><a class="nav-link" href="/logout">Logout</a></button>
+            </div>
+        </div>
         {% with messages = get_flashed_messages() %}
              <!-- declare a variable called messages -->
             {% if messages %}
@@ -29,22 +30,27 @@
                 {% endfor %} 
             {% endif %} 
         {% endwith %}
-        <form action="/update/{{notes.id}}" method="POST">
-            {% for note in notes %}
+        <form action="/update/{{one_note.id}}" method="POST">
             <div>
                 <label for="titleinput" class="form-label">Title:</label>
-                <input type="text" class="form-control" id="titleinput" name="title" fill="{{notes.title}}" />
+                <input type="text" class="form-control" id="titleinput" name="title" value="{{one_note.title}}" />
             </div>
+
+            <div>
+                <label for="nameinput" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="nameinput" name="name" value="{{one_note.name}}"/>
+            </div>
+
             <div>
                 <label for="date">Date:</label>
-                <input type="date" name="date" id="date" value="{{notes.date}}"/>
+                <input type="date" name="date" id="date" value="{{one_note.date}}"/>
             </div>
 
             <div>
                 <label for="textarea">Write your note:</label>
-                <textarea class="form-control" id="textarea" name="desc" rows="5">{{notes.desc}}</textarea>
+                <textarea class="form-control" id="textarea" name="desc" rows="5">{{one_note.desc}}</textarea>
             </div>
-            {% endfor %}
+
             <button type="submit">Update</button>
         </form>
     </body>
