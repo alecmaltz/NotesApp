@@ -8,19 +8,24 @@
         <title>Edit Note</title>
     </head>
 
-    <body class="body-img">
-      <div>
-        <div class=headerbars>
-            <h1>Edit Note!</h1>
-            <div>
-                <button><a href="/dashboard">All Notes</a> </button><!-- forgot if you guys wanted a button or a link to redirect the user, you can change if wanted -->
-            </div>
-            <div>
-                <button><a class="nav-link" href="/logout">Logout</a></button>
+    <body>
+        <div class=headerbar>
+            <div id="titlebuttonbox">
+                <div id="pagetitle"> 
+                    <h1>Edit Note!</h1>
+                </div>
+                <div id="titlebuttons">
+                    <div class="titlebutton">
+                        <a href="/dashboard"><button id="notesbutton">All Notes</button></a><!-- forgot if you guys wanted a button or a link to redirect the user, you can change if wanted -->
+                    </div>
+                    <div  class="titlebutton">
+                        <a class="nav-link" href="/logout"><button id="logoutbutton">Logout</button></a>
+                    </div>
+                </div>
             </div>
         </div>
         {% with messages = get_flashed_messages() %}
-             <!-- declare a variable called messages -->
+                <!-- declare a variable called messages -->
             {% if messages %}
                 <!-- check if there are any messages -->
                 {% for message in messages %}
@@ -30,15 +35,10 @@
                 {% endfor %} 
             {% endif %} 
         {% endwith %}
-        <form action="/update/{{notes.id}}" method="POST">
+        <form action="/update/{{notes.id}}" method="POST" class="body-img">
             <div>
                 <label for="titleinput" class="form-label">Title:</label>
                 <input type="text" class="form-control" id="titleinput" name="title" value="{{notes.title}}" />
-            </div>
-
-            <div>
-                <label for="nameinput" class="form-label">Name:</label>
-                <input type="text" class="form-control" id="nameinput" name="name" value="{{notes.name}}"/>
             </div>
 
             <div>

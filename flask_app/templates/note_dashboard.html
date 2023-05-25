@@ -9,14 +9,21 @@
     </head>
     <body class="body-img">
 
-        <div class="headerbars">
-            <h1>Hey {{user.first_name}}! </h1>
-            <div>
-                <button><a class="nav-link" href="/create_note">Create A Note</a> </button>
+        <div class=headerbar>
+            <div id="titlebuttonbox">
+                <div id="pagetitle"> 
+                    <h1>Hey {{ user.first_name }}</h1>
+                </div>
+                <div id="titlebuttons">
+                    <div class="titlebutton">
+                        <a href="/create_note"><button id="notesbutton">Create Note</button></a><!-- forgot if you guys wanted a button or a link to redirect the user, you can change if wanted -->
+                    </div>
+                    <div  class="titlebutton">
+                        <a class="nav-link" href="/logout"><button id="logoutbutton">Logout</button></a>
+                    </div>
+                </div>
             </div>
-            <div>
-                <button><a class="nav-link" href="/logout">Logout</a></button>
-            </div>
+        </div>
         </div>
         
         <!-- List of all notes -->
