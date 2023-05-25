@@ -65,7 +65,7 @@
 
 body{
     border: 25px solid teal;
-    background-color: indianred;
+/*     background-color: indianred; */
     /* display: flex; */
     
     /* color: dodgerblue; */
@@ -78,36 +78,25 @@ body{
    background-image: url("css/notepad.png");
     background-repeat: no-repeat;
     background-size: cover;
-
-.container{
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    background-color:  slategrey;
-    margin: 20px;
-    padding: 20px;
-    border: 25px solid teal;
-    border-radius: 25px;
-    background-color: slategray;
-    box-shadow: 10px 10px 10px 10px slateblue;
-    color: dodgerblue
 }
 
-.container2{
+
+.body-img{
+    border: 25px solid teal;
+/*     background-color: indianred; */
     /* display: flex; */
-    flex-direction: column;
-    /* width: max-content; */
-    background-color:  slategrey;
-    margin: 20px;
-    padding: 20px;
-    border: 25px solid teal;
+    
+    /* color: dodgerblue; */
     border-radius: 25px;
-    background-color: slategray;
-    box-shadow: 10px 10px 10px 10px slateblue;
-    color: peru
+    padding: 20px;
+    margin: 20px;
+    align-content: center;
+    justify-content: space-between;
+    box-shadow: 10px 10px 10px 10px peru;}
+   background-image: url("css/notepad.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
-
 
 
 /* .maintainer{
