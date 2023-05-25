@@ -28,7 +28,7 @@
 
 
 .body-img{
-    border: 25px solid teal;
+    /*border: 25px solid teal;
      background-color: indianred; */
     /* display: flex; */
     
@@ -49,11 +49,24 @@
 
 
 /* body */
-body{
-    box-shadow: 10px 10px 10px 10px peru;
+
+body {
+    background-color: #7bf1d5c4
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+form {
     background-image: url("/static/img/notepad.png");
     background-repeat: no-repeat;
     background-size: cover;
+    width: 70%;
+    height: 500px;
+    border-radius: 25px;
 }
 
 
@@ -121,6 +134,7 @@ body{
 form {
     display: flex;
     flex-direction: column;
+    background
     width: 80%;
 }
 
