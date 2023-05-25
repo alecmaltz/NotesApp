@@ -64,9 +64,10 @@
 }
 
 body{
+    border: 25px solid teal;
     background-color: indianred;
     /* display: flex; */
-    border: 25px solid teal;
+    
     /* color: dodgerblue; */
     border-radius: 25px;
     padding: 20px;
@@ -74,6 +75,9 @@ body{
     align-content: center;
     justify-content: space-between;
     box-shadow: 10px 10px 10px 10px peru;}
+   background-image: url("css/notepad.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 
 .container{
     display: flex;
