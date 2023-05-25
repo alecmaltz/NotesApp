@@ -6,8 +6,8 @@ class note:
     def __init__(self,db_data):
         self.id = db_data['id']
         self.title = db_data['title']
-        self.date = db_data['date']
-        self.desc = db_data['desc']
+        self.note_date = db_data['note_date']
+        self.description = db_data['description']
         self.updated_at = db_data['updated_at']
         self.created_at = db_data['created_at']
         self.creator = None
@@ -15,7 +15,7 @@ class note:
 
     @classmethod
     def save_note( cls,data ):
-        query = "INSERT INTO notes (title, date, desc, user_id) VALUES (%(title)s, %(date)s, %(desc)s, %(user_id)s);"
+        query = "INSERT INTO notes (title, note_date, description, user_id) VALUES (%(title)s, %(note_date)s, %(description)s, %(user_id)s);"
         return connectToMySQL('notes_app').query_db(query,data)
 
 

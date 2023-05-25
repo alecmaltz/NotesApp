@@ -90,13 +90,13 @@ def create_note():
 
 
 """note to db"""
-@app.route('/send_note', methods=['POST'])
+@app.route('/process/note', methods=['POST'])
 def send_note():
     data = {
         "user_id" : session['user_id'],
         "title" : request.form['title'],
-        "date" : request.form['date'],
-        "desc" : request.form['desc'],
+        "note_date" : request.form['note_date'],
+        "description" : request.form['description'],
     }
     note.save_note(data)
     return redirect('/dashboard')
