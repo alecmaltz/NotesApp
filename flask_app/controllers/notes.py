@@ -5,17 +5,6 @@ bcrypt = Bcrypt(app)
 from flask_app.models.user import User
 from flask_app.models.note import note
 
-
-
-"""starting page"""
-@app.route('/')
-def index():
-    return render_template("login_reg.html")
-
-
-"""Start of log/reg validation"""
-
-
 """register user"""
 @app.route('/register', methods=['POST'])
 def create():
@@ -69,7 +58,10 @@ def logout():
 
     return redirect("/")
 
-"""End of log/reg validation"""
+"""starting page"""
+@app.route('/')
+def index():
+    return render_template("login_reg.html")
 
 
 """notes page"""
@@ -81,7 +73,7 @@ def dashboard():
         data = {
             'id' : session['user_id']
         }
-        return render_template("note_dashboard.html" , user = User.get_one(data) , all_notes = note.get_notes())
+        return render_template("note_dashboard.html" , user = User.get_one(data) , all_notes = note.get_all_with_users())
 
 
 """add note"""
@@ -105,7 +97,7 @@ def send_note():
         "date" : request.form['date'],
         "desc" : request.form['desc'],
     }
-    note.save(data)
+    note.save_note(data)
     return redirect('/dashboard')
 
 
