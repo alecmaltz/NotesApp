@@ -48,6 +48,7 @@ def login():
         return redirect("/")
     
     session['user_id'] = user_in_db.id
+    print(session['user_id'])
     return redirect('/dashboard')
 
 
