@@ -12,8 +12,7 @@
     border-radius: 10px;
 }
 
-.headerbars{
-
+.headerbars {
     position: fixed;
 }
 
@@ -32,7 +31,7 @@
     border-radius: 25px;
 }
 
-*:hover{
+*:hover {
     /* box-shadow: 10px 10px 10px 10px peru; */
 }
 
@@ -74,8 +73,8 @@ body{
     margin: 20px;
     align-content: center;
     justify-content: space-between;
-    box-shadow: 10px 10px 10px 10px peru;}
-   background-image: url("css/notepad.png");
+    box-shadow: 10px 10px 10px 10px peru;
+    background-image: url("css/notepad.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -92,8 +91,8 @@ body{
     margin: 20px;
     align-content: center;
     justify-content: space-between;
-    box-shadow: 10px 10px 10px 10px peru;}
-   background-image: url("css/notepad.png");
+    box-shadow: 10px 10px 10px 10px peru;
+    background-image: url("css/notepad.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
