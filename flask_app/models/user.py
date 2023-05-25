@@ -54,6 +54,7 @@ class User:
     
     @staticmethod
     def validate_registration(user):
+        print("user_validated")
         is_valid = True
         if len(user['first_name']) < 1:
             flash("Firstname required")

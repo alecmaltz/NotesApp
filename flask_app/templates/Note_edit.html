@@ -29,27 +29,22 @@
                 {% endfor %} 
             {% endif %} 
         {% endwith %}
-        <form action="/update/{{one_note.id}}" method="POST">
+        <form action="/update/{{notes.id}}" method="POST">
+            {% for note in notes %}
             <div>
                 <label for="titleinput" class="form-label">Title:</label>
-                <input type="text" class="form-control" id="titleinput" name="title" value="{{one_note.title}}" />
+                <input type="text" class="form-control" id="titleinput" name="title" fill="{{notes.title}}" />
             </div>
-
-            <div>
-                <label for="nameinput" class="form-label">Name:</label>
-                <input type="text" class="form-control" id="nameinput" name="name" value="{{one_note.name}}"/>
-            </div>
-
             <div>
                 <label for="date">Date:</label>
-                <input type="date" name="date" id="date" value="{{one_note.date}}"/>
+                <input type="date" name="date" id="date" value="{{notes.date}}"/>
             </div>
 
             <div>
                 <label for="textarea">Write your note:</label>
-                <textarea class="form-control" id="textarea" name="desc" rows="5">{{one_note.desc}}</textarea>
+                <textarea class="form-control" id="textarea" name="desc" rows="5">{{notes.desc}}</textarea>
             </div>
-
+            {% endfor %}
             <button type="submit">Update</button>
         </form>
     </body>

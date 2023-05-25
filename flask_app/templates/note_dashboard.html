@@ -37,10 +37,10 @@
                     <td>{{note.name}}</td>
                     <td>{{note.date}}</td>
                     <td>
-                        <a href="/note/{{note.id}}">note|</a>
+                        <a href="/note/{{note.id}}">note</a>
                         {% if session['user_id'] == note.creator.id  %} <!-- creator is the user who is in session who can delete or edit their note-->
-                            <a href="/notes/edit/{{note.id}}">edit|</a> <!-- where the user can edit their note -->
-                            <a href="/notes/delete/{{note.id}}">delete</a> <!-- where the user can delete their note -->
+                            <a href="/notes/edit/{{note.id}}">|edit</a> <!-- where the user can edit their note -->
+                            <a href="/notes/delete/{{note.id}}">|delete</a> <!-- where the user can delete their note -->
                         {% endif %}
                     </td>
                 </tr>

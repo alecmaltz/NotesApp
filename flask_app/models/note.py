@@ -70,8 +70,7 @@ class note:
             one_note = cls(row)
             
             creator_data = {
-                "id" : row['id'],
-                "user.id" : row['user_id'], 
+                "id" : row['user_id'],
                 "first_name" : row['first_name'],
                 "last_name": row['last_name'],
                 "email" : row['email'],
@@ -83,6 +82,7 @@ class note:
             this_creator = user.User(creator_data)
             one_note.creator = this_creator
             all_notes.append(one_note)
+            print(creator_data)
         return all_notes
 
 

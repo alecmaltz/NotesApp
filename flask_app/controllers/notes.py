@@ -48,7 +48,6 @@ def login():
         return redirect("/")
     
     session['user_id'] = user_in_db.id
-    print(session['user_id'])
     return redirect('/dashboard')
 
 
@@ -116,17 +115,17 @@ def note_details(note_id):
 
 
 """delete note"""
-@app.route('/delete/<int:note_id>')
+@app.route('/notes/delete/<int:note_id>')
 def delete(note_id):
     data = {
         "id" : note_id
     } 
-    note.delete(data)
+    note.destroy(data)
     return redirect('/dashboard')
 
 
 """edit note"""
-@app.route('/edit_note/<int:note_id>')
+@app.route('/notes/edit/<int:note_id>')
 def edit_note(note_id):
     if "user_id" not in session:
         return redirect("/")
