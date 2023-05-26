@@ -37,17 +37,18 @@
         {% endwith %}
         <section>
             <form action="/update/{{notes.id}}" method="POST" class="body-img">
-                <div>
+
+                <div id="formtitle">
                     <label for="titleinput" class="form-label">Title:</label>
                     <input type="text" class="form-control" id="titleinput" name="title" value="{{notes.title}}" />
                 </div>
 
-                <div>
+                <div id="formdate">
                     <label for="date">Date:</label>
                     <input type="date" name="date" id="date" value="{{notes.date}}"/>
                 </div>
 
-                <div>
+                <div id="formdescript">
                     <label for="textarea">Write your note:</label>
                     <textarea class="form-control" id="textarea" name="desc" rows="5">{{notes.desc}}</textarea>
                 </div>

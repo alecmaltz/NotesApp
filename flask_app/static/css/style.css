@@ -134,10 +134,63 @@ form {
 form {
     display: flex;
     flex-direction: column;
-    background
+    align-items: center;
     width: 80%;
+    height: 800px;
 }
 
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+#formtitle {
+    margin: 25px;
+    letter-spacing: 1px;
+}
+
+#formtitle input {
+    height: 35px;
+    width: 300px;
+    background: none;
+}
+
+#formdate {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#formdate input {
+    width: 200px;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+    background: none;
+}
+
+#formdescript {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 20px;
+    width: 80%;
+    height: 90%;
+}
+
+#formdescript textarea {
+    width: 100%;
+    height: 100%;
+    background: none;
+}
+
+form button {
+    width: 100px;
+    height: 50px;
+    margin: 15px;
+    border-radius: 25px;
+    background-color: #f08257cb;
+}
 
 
 
@@ -178,7 +231,7 @@ button {
     border: 5px solid teal;
     color: dodgerblue;
     font-weight: bold;
-     align-self: flex-end; 
+    align-self: flex-end; 
     padding: 10px;
     width:auto;
     margin: 20px;
