@@ -137,8 +137,9 @@ def edit_note(note_id):
 
 """update note"""
 @app.route('/update/<int:note_id>', methods=['POST'])
-def note_update(note_id ):
+def note_update(note_id):
     data = {
+        "note_id " : note_id,
         "user_id" : session['user_id'],
         "title" : request.form['title'],
         "date" : request.form['date'],
